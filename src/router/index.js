@@ -189,7 +189,18 @@ export const asyncRoutes = [
   chartsRouter,
   nestedRouter,
   tableRouter,
-
+  {
+    path: '/user',
+    component: Layout,
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/user/list'),
+        name: 'userList',
+        meta: { title: 'userList', icon: 'list' }
+      }
+    ]
+  },
   {
     path: '/example',
     component: Layout,
